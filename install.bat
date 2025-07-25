@@ -31,8 +31,8 @@ set /p CLIENT_SECRET=Enter your Spotify Client Secret:
 REM Save to .env
 echo Writing to .env file...
 (
-  echo CLIENT_ID=%CLIENT_ID%
-  echo CLIENT_SECRET=%CLIENT_SECRET%
+  echo SPOTIFY_CLIENT_ID=%CLIENT_ID%
+  echo SPOTIFY_CLIENT_SECRET=%CLIENT_SECRET%
 ) > .env
 
 echo.
