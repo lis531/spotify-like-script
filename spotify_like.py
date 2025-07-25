@@ -24,11 +24,16 @@ spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(
     redirect_uri="http://127.0.0.1:8888/callback"
 ))
 
+NOTIFICATIONS_ENABLED = os.getenv("NOTIFICATIONS_ENABLED", "true").lower() == "true"
+
 track = spotify.current_playback()
 if track and track.get("item"):
-    show_notification(f"Track already liked: {track['item']['name']}")
+    if NOTIFICATIONS_ENABLED:
+        show_notification(f"Track already liked: {track['item']['name']}")
     if not spotify.current_user_saved_tracks_contains([track["item"]["id"]])[0]:
         spotify.current_user_saved_tracks_add([track["item"]["id"]])
-        show_notification(f"Liked: {track['item']['name']}")
+        if NOTIFICATIONS_ENABLED:
+            show_notification(f"Liked: {track['item']['name']}")
 else:
-    show_notification("No track is currently playing")
+    if NOTIFICATIONS_ENABLED:
+        show_notification("No track is currently playing")

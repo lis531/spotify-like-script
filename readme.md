@@ -3,28 +3,38 @@ This script allows you to like the currently playing song on Spotify using the S
 
 ## Requirements
 - Python 3.x
-- Spotipy library
+- Spotipy, python-dotenv and plyer packages
 - Spotify account with an active session
 - Spotify app registered in the Spotify Developer Dashboard
 
 ## Installation
 ### Automatic installation (recommended):
 1. Download the repository.
-2. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
-3. Set your redirect URI to `http://127.0.0.1:8888/callback`.
-4. Run the `install.bat` file to install the required dependencies and set up the environment.
-5. Follow the prompts to enter your Spotify credentials.
+2. Install Python 3.x from the official website.
+3. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
+4. Set your redirect URI to `http://127.0.0.1:8888/callback`.
+5. Run the `install.bat` file to install the required dependencies and set up the environment.
+6. Follow the prompts to enter your Spotify credentials.
 
 ### Manual installation:
 1. Download the repository.
 2. Install Python 3.x from the [official website](https://www.python.org/downloads/).
-3. Install the Spotipy library:
+3. Install the Spotipy package:
    ```bash
    pip install spotipy
    ```
-4. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
-5. Set your redirect URI to `http://127.0.0.1:8888/callback`.
-6. Obtain your `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` and place them in .env file:
+4. Install the python-dotenv package:
+   ```bash
+   pip install python-dotenv
+   ```
+5. Install the plyer package:
+   ```bash
+   pip install plyer
+   ```
+6. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
+7. Set your redirect URI to `http://127.0.0.1:8888/callback`.
+8. Create a `.env` file in the root directory of the project.
+9. Obtain your `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` and place them in .env file:
    ```
    SPOTIPY_CLIENT_ID=your_client_id
    SPOTIPY_CLIENT_SECRET=your_client_secret
