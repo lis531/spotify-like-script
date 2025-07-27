@@ -8,4 +8,4 @@ if not exist "venv" (
 )
 
 call venv\Scripts\activate.bat
-py spotify_like.py
+py main.py -like %*

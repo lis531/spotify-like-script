@@ -1,9 +1,9 @@
-# Spotify Like Script
-This script allows you to like the currently playing song on Spotify using the Spotipy library.
+# Spotify Liked Toggle
+This script allows you to toggle the like status of the currently playing song on Spotify using the Spotipy library and winotify with requests for notifications.
 
 ## Requirements
 - Python 3.x
-- Spotipy, python-dotenv and plyer packages
+- Spotipy, python-dotenv, winotify and requests packages
 - Spotify account with an active session
 - Spotify app registered in the Spotify Developer Dashboard
 
@@ -19,29 +19,25 @@ This script allows you to like the currently playing song on Spotify using the S
 ### Manual installation:
 1. Download the repository.
 2. Install Python 3.x from the [official website](https://www.python.org/downloads/).
-3. Install the Spotipy package:
+3. Install all required packages in one command:
+   
    ```bash
-   pip install spotipy
+   pip install spotipy python-dotenv winotify requests
    ```
-4. Install the python-dotenv package:
+4. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
+5. Set your redirect URI to `http://127.0.0.1:8888/callback`.
+6. Create a `.env` file in the root directory of the project.
+7. Obtain your `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` and place them in .env file:
+   
    ```bash
-   pip install python-dotenv
+   SPOTIFY_CLIENT_ID=your_client_id
+   SPOTIFY_CLIENT_SECRET=your_client_secret
+   NOTIFICATIONS_ENABLED=your_notification_preference (true/false)
    ```
-5. Install the plyer package:
-   ```bash
-   pip install plyer
-   ```
-6. Set up your Spotify app in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
-7. Set your redirect URI to `http://127.0.0.1:8888/callback`.
-8. Create a `.env` file in the root directory of the project.
-9. Obtain your `SPOTIPY_CLIENT_ID` and `SPOTIPY_CLIENT_SECRET` and place them in .env file:
-   ```
-   SPOTIPY_CLIENT_ID=your_client_id
-   SPOTIPY_CLIENT_SECRET=your_client_secret
-   ```
-
 ## Usage
-To run the script, execute the launch.bat file.
+To like or remove from liked the currently playing song, run the corresponding batch file:
+- To like the song, run `like.bat`.
+- To remove the song from liked, run `dislike.bat`.
 
 ## Note
 If you use apps like Razer Synapse you may add the script to your macros to run it with a press of a key.
